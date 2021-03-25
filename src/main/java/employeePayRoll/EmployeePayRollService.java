@@ -1,6 +1,5 @@
-package com.employeepayroll;
+package com.employeepayRoll;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,7 +9,8 @@ public class EmployeePayRollService {
     public enum IOService {
         CONSOLE_IO, FILE_IO, DB_IO, REST_IO;
     }
-
+    private List<EmployeePayRollData> employeePayRollDataList;
+    private EmployeePayRollDBService employeePayRollDBService;
     public List<EmployeePayRollData> employeeList;
     public EmployeePayRollService() {}
 
@@ -57,9 +57,37 @@ public class EmployeePayRollService {
         return  0;
     }
 
+
     public List<EmployeePayRollData> readEmployeeData(IOService ioService) {
         if (ioService.equals(IOService.DB_IO))
             this.employeeList = new EmployeePayRollDBService().readData();
+        return this.employeeList;
+    }
+
+    public void updateEmployeeSalary(String empName, double empSalary) {
+        int result = employeePayRollDBService.updateEmployeeData(empName,empSalary);
+        if (result == 0) return;
+        EmployeePayRollData employeePayRollData = this.getEmployeePayRollData(empName);
+        if (employeePayRollData != null) employeePayRollData.salary= (int) empSalary;
+    }
+
+    private EmployeePayRollData getEmployeePayRollData(String name) {
+        for (EmployeePayRollData data : employeeList) {
+            if (data.name.equals(name))
+                return data;
+        }
+        return null;
+    }
+
+    public boolean checkEmployeePayRollSyncWithDB(String name) {
+        List<EmployeePayRollData>employeePayrollDataList= employeePayRollDBService.getEmployeePayRollData(name);
+        return employeePayrollDataList.get(0).equals(getEmployeePayRollData(name));
+    }
+
+
+    public List<EmployeePayRollData> readFilteredEmpPayRollData(IOService ioService,String date1,String date2) {
+        if (ioService.equals(IOService.DB_IO))
+            this.employeeList = employeePayRollDBService.readFilteredData(date1,date2);
         return this.employeeList;
     }
 
