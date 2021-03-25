@@ -1,4 +1,4 @@
-package employeePayRoll;
+package com.employeepayRoll;
 
 import java.io.IOException;
 import java.nio.file.*;
@@ -7,12 +7,12 @@ import static java.nio.file.StandardWatchEventKinds.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class javaWatchService {
+public class JavaWatchService {
     private final WatchService watcher;
     private final Map<WatchKey, Path> dirWatchers;
 
 
-    javaWatchService(Path dir) throws IOException {
+    JavaWatchService(Path dir) throws IOException {
         this.watcher = FileSystems.getDefault().newWatchService();
         this.dirWatchers =new HashMap<WatchKey,Path>();
         scanAndRegisterDirectories(dir);

@@ -1,5 +1,6 @@
-package employeePayRoll;
+package com.employeepayroll;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,7 +11,7 @@ public class EmployeePayRollService {
         CONSOLE_IO, FILE_IO, DB_IO, REST_IO;
     }
 
-    private List<EmployeePayRollData> employeeList;
+    public List<EmployeePayRollData> employeeList;
     public EmployeePayRollService() {}
 
     public EmployeePayRollService(List<EmployeePayRollData> employeeList) {
@@ -26,12 +27,14 @@ public class EmployeePayRollService {
             String name = sc.next();
             System.out.println("Enter Employee Salary: ");
             double salary = sc.nextDouble();
-            System.out.println("Enter Employee Date: ");
-            double Date = sc.nextDouble();
-            employeeList.add(new EmployeePayRollData(id, name, salary, Date));
-        }else if(ioService.equals(IOService.FILE_IO))
-            new EmployeePayRollFileIOService().readDate();
-        return 4;
+            employeeList.add(new EmployeePayRollData(id, name, salary));
+            long result = employeeList.size();
+            return result;
+        }else if (ioService.equals(IOService.FILE_IO)){
+            new EmployeePayRollFileIOService().readData();
+            return employeeList.size();
+        }else
+            return 0;
     }
 
 
@@ -51,7 +54,13 @@ public class EmployeePayRollService {
     public long countEntries(IOService ioService){
         if(ioService.equals(IOService.FILE_IO))
             new EmployeePayRollFileIOService().countEntries();
-        return  4;
+        return  0;
+    }
+
+    public List<EmployeePayRollData> readEmployeeData(IOService ioService) {
+        if (ioService.equals(IOService.DB_IO))
+            this.employeeList = new EmployeePayRollDBService().readData();
+        return this.employeeList;
     }
 
     public static void main(String[] args) {
@@ -61,5 +70,4 @@ public class EmployeePayRollService {
         empService.writeData(IOService.FILE_IO);
         empService.readData(IOService.FILE_IO);
     }
-
 }
