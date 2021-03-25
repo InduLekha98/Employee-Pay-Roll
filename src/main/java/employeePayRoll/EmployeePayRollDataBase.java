@@ -1,4 +1,4 @@
-package com.employeepayroll;
+package com.employeepayRoll;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ public class EmployeePayRollDataBase {
     private static EmployeePayRollDBService employeePayRollDBService;
 
 
-    public static EmployeePayRollDataBase getInstance(){
+    public static EmployeePayRollDataBaseB getInstance(){
         if (employeePayRollDBService==null)
             employeePayRollDBService=new EmployeePayRollDBService();
         return employeePayRollDBService;

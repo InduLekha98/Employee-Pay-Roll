@@ -44,6 +44,17 @@ public class EmployeePayRollFileIOService {
         return  entries;
     }
 
+    public long countEntries(){
+        long entries = 0;
+        try{
+            entries = Files.lines(new File(PAYROLL_FILE_NAME).toPath())
+                    .count();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return  entries;
+    }
+
 
     public List readData() {
         List<String> employeePayRollDataList = new ArrayList<>();
