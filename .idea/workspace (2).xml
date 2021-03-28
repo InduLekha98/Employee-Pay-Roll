@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ad91f28d-9923-4bc1-a877-9fab89631e6d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Assignment 1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment 1.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse-workspace/Hellojava/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse-workspace/Hellojava/src/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse-workspace/Helloworld/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse-workspace/Helloworld/src/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse-workspace/JavaMavenProject/src/main/java/com/javapractice/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse-workspace/JavaMavenProject/src/main/java/com/javapractice/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eclipse-workspace/JavaMavenProject/src/main/resources/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../eclipse-workspace/JavaMavenProject/src/main/resources/log4j.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../folder.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helloworld.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1qOBoPxE4yoBkIYbIvFF7DbRx7s" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="compactDirectories" value="true" />
+    <option name="flattenModules" value="true" />
+    <option name="flattenPackages" value="true" />
+    <option name="foldersAlwaysOnTop" value="false" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showModules" value="false" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ad91f28d-9923-4bc1-a877-9fab89631e6d" name="Default Changelist" comment="" />
+      <created>1616940935365</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616940935365</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
