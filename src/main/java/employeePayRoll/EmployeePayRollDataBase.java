@@ -82,6 +82,17 @@ public class EmployeePayRollDataBase {
         }catch (SQLException e){
             e.printStackTrace();
         }
+        return employeePayrollDataList;
+    }
+
+    private void preparedStatementForEmployeeData() {
+        try {
+            Connection connection = this.getConnection();
+            String sql = "select * from employee_system where name= ?;";
+            employeePayRollDataStatement = connection.prepareStatement(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public int updateEmployeeData(String name, double salary) {
@@ -111,5 +122,50 @@ public class EmployeePayRollDataBase {
         }
         return employeePayRollDataList;
     }
+    public double sumOfSalary(String gender) {
+        String sql = String.format("select sum(salary) from employee_system where gender='%s'", gender);
+        double result = 0;
+        try (Connection connection = this.getConnection()) {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                result = resultSet.getDouble("sum(salary)");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+    public double avgOfSalary(String gender) {
+        String sql = String.format("select avg(salary) as avg_salary from employee_system where gender='%s' group by gender;", gender);
+        double result = 0;
+        try (Connection connection = this.getConnection()) {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                result = resultSet.getDouble("avg(salary)");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public int countGender(String gender) {
+        String sql = String.format("select count(salary) as count_salary from employee_system where gender='%s' group by gender;\n", gender);
+        int result = 0;
+        try (Connection connection = this.getConnection()) {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                result = resultSet.getInt("count(gender)");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+}
 
 }

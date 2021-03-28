@@ -90,6 +90,29 @@ public class EmployeePayRollService {
             this.employeeList = employeePayRollDBService.readFilteredData(date1,date2);
         return this.employeeList;
     }
+    public double sumOfSalary(IOService ioService, String gender) {
+        if (ioService.equals(IOService.DB_IO)) {
+            double result = employeePayRollDBService.sumOfSalary(gender);
+            return result;
+        }
+        return 0.0;
+    }
+
+    public double avgOfSalary(IOService ioService, String gender) {
+        if (ioService.equals(IOService.DB_IO)) {
+            double result = employeePayRollDBService.avgOfSalary(gender);
+            return result;
+        }
+        return 0.0;
+    }
+
+    public int countByGender(IOService ioService, String gender) {
+        if (ioService.equals(IOService.DB_IO)) {
+            int result = employeePayRollDBService.countGender(gender);
+            return result;
+        }
+        return 0;
+    }
 
     public static void main(String[] args) {
         ArrayList<EmployeePayRollData> employeeList = new ArrayList<>();
