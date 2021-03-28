@@ -24,17 +24,6 @@ public class EmployeePayRollData {
         this.name = name;
         this.salary = salary;
     }
-
-    public void EmployeePayRollData(int id, String name,String gender, double salary, String address, String phone_no, LocalDate join_date){
-        this.id = id;
-        this.name = name;
-        this.gender = gender;
-        this.salary = salary;
-        this.address = address;
-        this.phone_no = phone_no;
-        this.join_date = join_date;
-    }
-
     @Override
     public String toString(){
         return "EmployeePayRollData [id:" +id+" name:" +name+ " salary:" + salary+ "]";

@@ -11,7 +11,7 @@ import java.util.List;
 public class EmployeePayRollFileIOService {
     public static String PAYROLL_FILE_NAME = "C:\\EmployeePayRoll\\src\\main\\resources\\payroll-file.csv";
 
-    public void writeData(List<EmployeePayRollData> employeePayRollDataList){
+    public void writeData(List<com.employeepayRoll.EmployeePayRollDataBase> employeePayRollDataList){
         StringBuffer empBuffer = new StringBuffer();
         employeePayRollDataList.forEach(employee -> {
             String employeeDataString = employee.toString().concat("\n");
