@@ -48,3 +48,4 @@ public class EmployeePayRollData {
         return id == that.id && salary == that.salary && Objects.equals(name, that.name) && Objects.equals(gender, that.gender) && Objects.equals(join_date, that.join_date);
     }
 }
+
