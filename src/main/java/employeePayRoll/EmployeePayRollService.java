@@ -1,4 +1,4 @@
-package com.employeepayroll;
+package com.employeepayRoll;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -11,10 +11,12 @@ public class EmployeePayRollService {
         CONSOLE_IO, FILE_IO, DB_IO, REST_IO;
     }
 
-    public List<EmployeePayRollData> employeeList;
+    private List<com.employeepayRoll.EmployeePayRollDataBase> employeePayRollDataList;
+    private com.employeepayRoll.EmployeePayRollDataBase employeePayRollDataBase;
+    public List<com.employeepayRoll.EmployeePayRollDataBase> employeeList;
     public EmployeePayRollService() {}
 
-    public EmployeePayRollService(List<EmployeePayRollData> employeeList) {
+    public EmployeePayRollService(List<com.employeepayRoll.EmployeePayRollDataBase> employeeList) {
         this.employeeList = employeeList;
     }
 
@@ -27,7 +29,7 @@ public class EmployeePayRollService {
             String name = sc.next();
             System.out.println("Enter Employee Salary: ");
             double salary = sc.nextDouble();
-            employeeList.add(new EmployeePayRollData(id, name, salary));
+            employeeList.add(new com.employeepayRoll.EmployeePayRollDataBase(id, name, salary));
             long result = employeeList.size();
             return result;
         }else if (ioService.equals(IOService.FILE_IO)){
@@ -57,14 +59,14 @@ public class EmployeePayRollService {
         return  0;
     }
 
-    public List<EmployeePayRollData> readEmployeeData(IOService ioService) {
+    public List<com.employeepayRoll.EmployeePayRollDataBase> readEmployeeData(IOService ioService) {
         if (ioService.equals(IOService.DB_IO))
-            this.employeeList = new EmployeePayRollDBService().readData();
+            this.employeeList = new com.employeepayRoll.EmployeePayRollDataBase().readData();
         return this.employeeList;
     }
 
     public static void main(String[] args) {
-        ArrayList<EmployeePayRollData> employeeList = new ArrayList<>();
+        ArrayList<com.employeepayRoll.EmployeePayRollDataBase> employeeList = new ArrayList<>();
         EmployeePayRollService empService = new EmployeePayRollService(employeeList);
         Scanner sc = new Scanner(System.in);
         empService.writeData(IOService.FILE_IO);
